@@ -4,13 +4,18 @@ package com.company;
  * Created by brian on 6/14/17.
  */
 public class Board {
-	int[][] gameBoard;
+	char[][] gameBoard;
 
 	Board() {
-		this.gameBoard = new int[3][3];
+		this.gameBoard = new char[3][3];
+		for(int i = 0; i < this.gameBoard.length; i++ ) {
+			for(int j = 0; j < this.gameBoard.length; j++ ) {
+				this.gameBoard[i][j] = '_';
+			}
+		}
 	}
 
-	int[][] getGameBoard() {
+	char[][] getGameBoard() {
 		return this.gameBoard;
 	}
 
@@ -22,5 +27,9 @@ public class Board {
 				System.out.print(" ");
 			}
 		}
+	}
+
+	void playerMove(int x, int y, char player) {
+		this.gameBoard[x][y] = player;
 	}
 }
