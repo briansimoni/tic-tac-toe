@@ -70,8 +70,9 @@ public class Board {
 		return false;
 	}
 
+	// not working yet
 	int minimax(boolean isMaximizingPlayer) {
-		if(this.gameIsOver()) {
+		if(this.checkForWin() == true) {
 			return 1;
 		}
 
@@ -92,6 +93,7 @@ public class Board {
 				return bestVal;
 			}
 		}
+		return 0;
 	}
 
 	boolean gameIsOver() {
